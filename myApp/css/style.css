@@ -1,0 +1,20 @@
+.top-menu { margin:0; padding:0; height:100px; background:#000; position:absolute; bottom:0; left:0; width:100%; }
+	.top-menu li { list-style:none; float:left; }
+	.top-menu li a { float:left; color:#fff; text-decoration:none; height:30px; line-height:50px; padding:0 15px; }
+
+
+	.home {
+		display: none;
+	}
+	.pages {
+		display: none;
+	}
+
+	.services {
+		display: none;
+	}
+
+	.contact {
+		display: none;
+
+}
