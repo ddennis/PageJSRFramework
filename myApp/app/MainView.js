@@ -1,6 +1,6 @@
 
 
-define( ['controller/MenuNavigator'] ,  function( menuNavigator ){
+define( ['controller/MenuNavigator','controller/ViewNavigator', 'model/AppModel'] ,  function( menuNavigator , viewNavigator,  Model ){
 
 
   function startApp(){
@@ -9,15 +9,22 @@ define( ['controller/MenuNavigator'] ,  function( menuNavigator ){
       var container = $('#myheader');
       var items = container.find('li');
 
-      console.log (" items " +items.length )
-      menuNavigator.init(items)
 
-    }
+     var navigationModel = new Model ()
+     menuNavigator.init(items, navigationModel)
+
+     viewNavigator.setModel(navigationModel)
+
+
+
+
+
+    };
 
 
     function janne() {
         console.log (" Babbay yes" )
-    }
+    };
 
 
     return {

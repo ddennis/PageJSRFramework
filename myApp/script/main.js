@@ -31,7 +31,7 @@
 
 				require( ['jquery', 'app/MainView'], function( $ , mainView) {
 
-					$('<p>APP is YES running.</p>').appendTo( $("#placeholder") );
+					$('<p>APP is YESf running.</p>').appendTo( $("#placeholder") );
 							
 					mainView.startApp()
 

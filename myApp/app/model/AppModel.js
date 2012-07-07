@@ -1,17 +1,51 @@
 
 define(function(){
- 
-	var _totalItems = 0;
 
-	var currentIndex = 0;
-	var oldIndex  
+    // Events
+    //var MODEL_UPDATE = 'ModelUpdate'
 
 
+    var _totalItems = 0;
+	//var currentIndex = 0;
+	var oldIndex
+
+
+    function Model(){
+        //this.name = name || 'Default name';
+
+        // EVENT
+        Model.prototype.MODEL_UPDATE  = 'ModelUpdate'
+
+        // VAR
+        Model.prototype.currentIndex   = 0
+
+
+        Model.prototype.setCurrentIndex = function (index) {
+            if(index != this.currentIndex){
+                this.currentIndex =  index
+                this.update ()
+            }
+        }
+
+        Model.prototype.update = function () {
+            console.log ("Model index =  " + this.currentIndex )
+           $(this).trigger(this.MODEL_UPDATE);
+        }
+
+
+    }
+
+
+
+
+
+
+/*
 	// autoStart
-	init()
+	//init()
 
   	function init(){
-		
+
   		//$(document).on('changeIndex', function() { console.log (" model change "  +  ) });
         setTotalItems()
 
@@ -20,19 +54,20 @@ define(function(){
 
 
 	function setTotalItems (argument) {
-			totalItems = argument;			
+			totalItems = argument;
+
 	};
 
-	
-	function getTotalItems () {		
+
+	function getTotalItems () {
 		//console.log ("totalItems " + totalItems);
 		return totalItems
 	};
 
 
-	// argument  as int	 
+	// argument  as int
 	function setCurrentIndex (argument) {
-		
+
 		currentIndex = argument
 		update ()
 	};
@@ -40,15 +75,31 @@ define(function(){
 
 	function update (argument) {
 		console.log ("Model index =  " + currentIndex )
-		$(document).trigger('ModelUpdate');
+		//$(document).trigger(MODEL_UPDATE);
+		//$(this).trigger(MODEL_UPDATE);
+		//$(document).trigger(MODEL_UPDATE);
+
+        $(document).trigger(MODEL_UPDATE);
+          console.log ("appmodel  " +  $(this)          )
+
 	}
 
- 	
-    return {
-        init: init,
-        setTotalItems: setTotalItems,
-        setCurrentIndex: setCurrentIndex ,
-        getTotalItems: getTotalItems	
 
-    };
+         return {
+         Model:Model(),
+         init: init,
+         setTotalItems: setTotalItems,
+         setCurrentIndex: setCurrentIndex ,
+         getTotalItems: getTotalItems
+         ,MODEL_UPDATE: MODEL_UPDATE
+
+         };
+
+*/
+
+    return Model
+
+
+
+
 });

@@ -1,13 +1,27 @@
 //define(['lib/AppModel' ], function (model) {
-define(['model/AppModel'], function (model) {
+//define(['model/AppModel'], function (model) {
+define(function () {
 
+
+    var model
     var itemArr = [];
     var current = null
     var prevCurrent = null
 
 
-    function init(items) {
 
+    function init(items , _model) {
+
+       model = _model
+
+
+        $(model).on(model.MODEL_UPDATE ,  function(){
+           // console.log ("YES MAND " )
+            var k = model.currentIndex
+            console.log ("menu navigator = " + k)
+
+
+        });
 
         // is passed in the init function
          // Find menu-items
@@ -23,10 +37,10 @@ define(['model/AppModel'], function (model) {
             // Save index
             item.data('index', i);
 
+            // put in array
             itemArr[i] = item
 
             /* Handle mouseenter*/
-
             item.on('mouseenter.menu', function () {
                 // Add active class
                 //$(this).addClass('active');
@@ -56,24 +70,23 @@ define(['model/AppModel'], function (model) {
                 // Content index
                 //Config_main.contentIndex = $(this).data('index');
                 var index = $(this).data('index');
-               // model.setCurrentIndex(index)
-
+                model.setCurrentIndex(index)
+                // testIt ()
 
                 //setCurrentByIndex(index)
-                onSelect($(this))
-
+               // onSelect($(this))
+              //  model.setCurrentIndex(index)
                 // Call content-change
                 //$(document).trigger('changeIndex');
             });
-        };
-    };
+        }
+    }
+
 
 
     function setCurrentByIndex(argument) {
-
         var item = itemArr[argument]
         onSelect (item)
-
     }
 
 
