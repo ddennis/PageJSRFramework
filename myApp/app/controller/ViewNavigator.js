@@ -20,6 +20,7 @@ define(function(){
 
         currentPage = pageArr[index]
         activateCurrent(currentPage);
+        console.log ("ss " )
 
     }
 
