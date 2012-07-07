@@ -3,18 +3,7 @@
 	.top-menu li a { float:left; color:#fff; text-decoration:none; height:30px; line-height:50px; padding:0 15px; }
 
 
-	.home {
-		display: none;
+	.content-base {
+        opacity: 0;
+        display: none;
 	}
-	.pages {
-		display: none;
-	}
-
-	.services {
-		display: none;
-	}
-
-	.contact {
-		display: none;
-
-}

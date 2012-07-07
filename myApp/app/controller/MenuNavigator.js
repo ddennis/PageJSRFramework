@@ -2,32 +2,27 @@
 //define(['model/AppModel'], function (model) {
 define(function () {
 
-
     var model
     var itemArr = [];
     var current = null
     var prevCurrent = null
 
-
-
     function init(items , _model) {
 
-       model = _model
-
+        model = _model
 
         $(model).on(model.MODEL_UPDATE ,  function(){
-           // console.log ("YES MAND " )
-            var k = model.currentIndex
-            console.log ("menu navigator = " + k)
 
+            var index = model.currentIndex
+            setCurrentByIndex(index)
 
         });
 
         // is passed in the init function
-         // Find menu-items
+        // Find menu-items
         //var container = $('.top-menu');
         //var items = container.find('li');
-
+//---------------------------------------------------------------------------------------
 
         // Loop through menu items
         for (var i = 0, j = items.length; i < j; i++) {
@@ -51,6 +46,7 @@ define(function () {
 
             });
 
+//---------------------------------------------------------------------------------------
 
             // Handle mouseleave
             item.on('mouseleave.menu', function () {
@@ -65,12 +61,16 @@ define(function () {
 
             });
 
+//---------------------------------------------------------------------------------------
+
             // Handle click
             item.on(Config_main.touch ? 'touchend' : 'click', function () {
                 // Content index
                 //Config_main.contentIndex = $(this).data('index');
                 var index = $(this).data('index');
                 model.setCurrentIndex(index)
+
+
                 // testIt ()
 
                 //setCurrentByIndex(index)
