@@ -1,6 +1,6 @@
 
 
-define( ['controller/MenuNavigator','controller/ViewNavigator', 'model/AppModel'] ,  function( menuNavigator , viewNavigator,  Model ){
+define( ['controller/MenuNavigator','controller/ViewNavigator', 'model/AppModel'] ,  function( menuNavigator , ViewNavigator,  Model ){
 
 
   function startApp(){
@@ -11,21 +11,24 @@ define( ['controller/MenuNavigator','controller/ViewNavigator', 'model/AppModel'
 
          var navigationModel = new Model ()
          menuNavigator.init(items, navigationModel)
-         viewNavigator.setModel(navigationModel)
+         //viewNavigator.setModel(navigationModel)
+      var viewNav = new ViewNavigator ()
+      viewNav.setModel(navigationModel)
 
 //---------------------------------------------------------------------------------------
 
         var home = $("#home")
-        viewNavigator.addView(home)
+
+      viewNav.addView(home)
 
         var folio = $('#folio')
-        viewNavigator.addView(folio)
+      viewNav.addView(folio)
 
         var about = $('#about')
-        viewNavigator.addView(about)
+      viewNav.addView(about)
 
         var contact = $('#contact')
-        viewNavigator.addView(contact)
+      viewNav.addView(contact)
 
         // start it
         navigationModel.update ()
