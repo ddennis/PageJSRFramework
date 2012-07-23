@@ -6,10 +6,7 @@ define(function(){
     var prevPage = null
 
 
-
-
     function update(index){
-
 
         if(currentPage ){
             prevPage = currentPage
@@ -17,10 +14,8 @@ define(function(){
 
         }
 
-
         currentPage = pageArr[index]
         activateCurrent(currentPage);
-        console.log ("ss " )
 
     }
 
@@ -36,12 +31,6 @@ define(function(){
         currentPage.css("display","none")
         currentPage.css("opacity","0")
     }
-
-
-
-
-
-
 
     /**
      * @contentHolder
@@ -68,7 +57,6 @@ define(function(){
     
 
     return {
-
         setModel:setModel,
         addView:addView
     };
