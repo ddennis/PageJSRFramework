@@ -49,12 +49,5 @@ Config_main = {
     // Is touch supported
     touch : Modernizr.touch,
 
-    // Set content-index
-    contentIndex : 0,
 
-    // Initlialize something
-    init : function () {
-
-        console.log ("Config_main init"  )
-    }
 }
