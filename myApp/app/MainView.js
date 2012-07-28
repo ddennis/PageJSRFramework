@@ -12,8 +12,9 @@ define( ['controller/MenuNavigator','controller/ViewNavigator', 'model/AppModel'
          var navigationModel = new Model ()
          menuNavigator.init(items, navigationModel)
          //viewNavigator.setModel(navigationModel)
-      var viewNav = new ViewNavigator ()
-      viewNav.setModel(navigationModel)
+
+          var viewNav = new ViewNavigator ()
+          viewNav.setModel(navigationModel)
 
 //---------------------------------------------------------------------------------------
 
