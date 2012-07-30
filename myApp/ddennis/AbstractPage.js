@@ -1,6 +1,8 @@
 
 define(function(){
- 
+
+
+   var domObj = null
 
   function AbstractPage(name){
 
@@ -14,11 +16,17 @@ define(function(){
   			return this.name;
   		};
 
+
+
   		AbstractPage.prototype.activate = function() {
   			
-  			  return "AbstractPage activate" 
+  			  //return "AbstractPage activate"
+              console.log ("AbstractPage activate " )
 
   		};
+
+
+
 
 
 

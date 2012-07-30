@@ -22,7 +22,7 @@
 				require.config({
 					
 					paths: {
-
+                        views:'app/pages',
                         model:'app/model',
                         controller :'app/controller',
 						jquery: './lib/jquery'

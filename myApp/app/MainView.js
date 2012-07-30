@@ -1,6 +1,14 @@
 
 
-define( ['controller/MenuNavigator','controller/ViewNavigator', 'model/AppModel'] ,  function( menuNavigator , ViewNavigator,  Model ){
+define( ['controller/MenuNavigator','controller/ViewNavigator', 'model/AppModel', 'views/FrontPage', 'views/Portfolio'] ,
+    function(
+        menuNavigator ,
+        ViewNavigator,
+        Model,
+        FrontPage ,
+        Portfolio
+
+        ){
 
 
   function startApp(){
@@ -18,19 +26,21 @@ define( ['controller/MenuNavigator','controller/ViewNavigator', 'model/AppModel'
 
 //---------------------------------------------------------------------------------------
 
-        var home = $("#home")
+      var home = $("#home")
+      viewNav.addView(home, new FrontPage())
 
-      viewNav.addView(home)
 
-        var folio = $('#folio')
-      viewNav.addView(folio)
+      var folio = $('#folio')
+      viewNav.addView(folio, new Portfolio())
 
+
+/*
         var about = $('#about')
       viewNav.addView(about)
 
         var contact = $('#contact')
       viewNav.addView(contact)
-
+*/
         // start it
         navigationModel.update ()
 

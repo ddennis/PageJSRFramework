@@ -12,14 +12,11 @@ define(['ddennis/AbstractViewNavigator'], function(AbstractViewNavigator){
     }
 
 
-
-
-
-
     ViewNavigator.prototype.activatePage = function (currentPage) {
 
+
         currentPage.css("display","block")
-        currentPage.animate({'opacity':1}, {duration:100, easing:'swing', queue:false});
+        currentPage.animate({'opacity':1}, {duration:800, easing:'swing', queue:false});
 
     }
 
