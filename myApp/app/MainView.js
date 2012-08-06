@@ -38,11 +38,16 @@ define( ['controller/MenuNavigator','controller/ViewNavigator', 'model/AppModel'
       var folio = $('#folio')
       viewNav.addView(folio, new Portfolio())
 
-      var about = $('#about')
+      var about = $("#about")
       viewNav.addView(about)
 
       var contact = $('#contact')
       viewNav.addView(contact)
+
+      var testSide = $('#testter')
+      viewNav.addView(testSide)
+
+
 
       // start it
       navigationModel.update (0)
