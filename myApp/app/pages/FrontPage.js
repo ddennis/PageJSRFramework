@@ -19,7 +19,7 @@ define(['ddennis/AbstractPage'], function(AbstractPage){
 
     FrontPage.prototype.activate = function() {
 
-        console.log ("FrontPage activate " )
+        //console.log ("FrontPage activate " )
         _domObj.css("display","block")
         _domObj.animate({'opacity':1}, {duration:1000, easing:'swing', queue:false});
 
@@ -29,7 +29,7 @@ define(['ddennis/AbstractPage'], function(AbstractPage){
 
 
     FrontPage.prototype.setDomObj = function (argument) {
-        console.log ("SET DOM OBJ " )
+        //console.log ("SET DOM OBJ " )
         _domObj = argument
     }
 

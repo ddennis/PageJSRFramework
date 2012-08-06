@@ -24,7 +24,7 @@ define(['ddennis/AbstractPage'], function (AbstractPage) {
         if(currentPage ){
             prevPage = currentPage
             prevModule = currentModule
-            this.deActivatePage (prevPage,prevModule  )
+            this.deActivatePage (prevPage, prevModule  )
 
             //deactivatePrev(prevPage)
            // AbstractViewNavigator.prototype.deactivatePrev.call(this, prevPage )
@@ -33,13 +33,12 @@ define(['ddennis/AbstractPage'], function (AbstractPage) {
         currentPage = pageArr[index]
         currentModule = moduleArr[index]
 
-        if(currentModule != null ){
+
             currentModule.activate ()
-            this.updateAdressbar()
-        }
 
 
 
+        this.updateAdressbar()
 
         //AbstractViewNavigator.prototype.activateCurrent.call(this,currentPage )
 
@@ -63,7 +62,7 @@ define(['ddennis/AbstractPage'], function (AbstractPage) {
         pageArr[pageCount] = content;
 
         pageTitleArr[pageCount] = content.data("hashtitle")
-        console.log ("title = " + content.data('hashtitle'))
+       // console.log ("title = " + content.data('hashtitle'))
 
         // if no module is assigned to specific content, it is given an abstractpage
         if(pageModule != undefined){
@@ -85,12 +84,12 @@ define(['ddennis/AbstractPage'], function (AbstractPage) {
     AbstractViewNavigator.prototype.updateAdressbar = function () {
        // console.log ("************************ " )
         var kk = pageTitleArr[_model.currentIndex]
-        console.log ("titkle =  " + kk)
+       // console.log ("titkle =  " + kk)
 
 
        //SWFAddress.setTitle(kk)
 
-        //SWFAddress.setValue(kk)
+        SWFAddress.setValue(kk)
 
     };
 

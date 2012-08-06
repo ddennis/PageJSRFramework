@@ -54,11 +54,10 @@ define( ['controller/MenuNavigator','controller/ViewNavigator', 'model/AppModel'
 
         function handleChange(e) {
 
-            console.log ("HANDLE " )
+            //console.log ("HANDLE " )
             console.log ("e "+ e.path )
             console.log ("------------------------ " )
         }
-
 
 
 
