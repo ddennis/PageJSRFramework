@@ -90,24 +90,50 @@ define(['ddennis/AbstractPage'], function (AbstractPage) {
 //---------------------------------------------------------------------------------------
 
     AbstractViewNavigator.prototype.updateAdressbar = function () {
-       // console.log ("************************ " )
-        var kk = pageTitleArr[_model.currentIndex]
-       // console.log ("titkle =  " + kk)
 
+        var pageTitle = pageTitleArr[_model.currentIndex]
+        //SWFAddress.setTitle(kk)
 
-       //SWFAddress.setTitle(kk)
-
-        SWFAddress.setValue(kk)
+        SWFAddress.setValue(pageTitle)
 
     };
 
 
+    AbstractViewNavigator.prototype.urlChange = function (url) {
 
 
-    function formatTitle(title) {
-        return (title != '/' ? ' / ' + toTitleCase(title.substr(1, title.length - 2).replace(/\//g, ' / ')) : '');
+        var myurl = toTitleCase(url)
+
+        var indexNum = undefined
+
+        for (var i = 0, j = pageTitleArr.length; i < j; i++) {
+            var item = pageTitleArr[i]
+
+            if(item === myurl ){
+                indexNum = i
+            }
+        }
+
+        if(indexNum == undefined ){
+            _model.setCurrentIndex(_model.currentIndex)
+
+        }else{
+            _model.setCurrentIndex(indexNum)
+
+        }
+
+            console.log ("indexNum = " +indexNum )
     }
 
+
+
+    function toTitleCase(str) {
+        return  str.substr(1);
+    }
+
+    function formatTitle(title) {
+        return  (title != '/' ? ' / ' + toTitleCase(title.substr(1, title.length - 2).replace(/\//g, ' / ')) : '');
+    }
 //---------------------------------------------------------------------------------------
 
     AbstractViewNavigator.prototype.setModel = function (model) {

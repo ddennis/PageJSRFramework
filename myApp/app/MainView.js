@@ -28,40 +28,51 @@ define( ['controller/MenuNavigator','controller/ViewNavigator', 'model/AppModel'
           viewNav.setModel(navigationModel)
 
 
-      _viewNav = viewNav
+          _viewNav = viewNav
 
 //---------------------------------------------------------------------------------------
 
-      var home = $("#home")
-      viewNav.addView(home, new FrontPage())
+          var home = $("#home")
+          viewNav.addView(home, new FrontPage())
 
-      var folio = $('#folio')
-      viewNav.addView(folio, new Portfolio())
+          var folio = $('#folio')
+          viewNav.addView(folio, new Portfolio())
 
-      var about = $("#about")
-      viewNav.addView(about)
+          var about = $("#about")
+          viewNav.addView(about)
 
-      var contact = $('#contact')
-      viewNav.addView(contact)
+          var contact = $('#contact')
+          viewNav.addView(contact)
 
-      var testSide = $('#testter')
-      viewNav.addView(testSide)
+          var testSide = $('#testter')
+          viewNav.addView(testSide)
+
+          // start it
+          //navigationModel.update (0)
 
 
+          SWFAddress.addEventListener(SWFAddressEvent.CHANGE, handleChange);
 
-      // start it
-      navigationModel.update (0)
 
-      SWFAddress.addEventListener(SWFAddressEvent.CHANGE, handleChange);
+         _viewNav.urlChange(SWFAddress.getValue()  )
+
 
 
     }
+
+
+
 
         function handleChange(e) {
 
             //console.log ("HANDLE " )
             console.log ("e "+ e.path )
             console.log ("------------------------ " )
+
+             _viewNav.urlChange(e.path)
+
+
+
         }
 
 

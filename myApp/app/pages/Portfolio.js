@@ -20,7 +20,7 @@ define(['ddennis/AbstractPage'], function (AbstractPage) {
         _name = name
         _el = el
         AbstractPage.call(this, name);
-        console.log(this.name + " = er GO!")
+        //console.log(this.name + " = er GO!")
     }
 
 
@@ -39,7 +39,7 @@ define(['ddennis/AbstractPage'], function (AbstractPage) {
     Portfolio.prototype.setDomObj = function (argument) {
         this._domObj = argument
 
-    }
+    };
 
     Portfolio.prototype.cleanUp = function () {
 
@@ -48,7 +48,7 @@ define(['ddennis/AbstractPage'], function (AbstractPage) {
         this._domObj.css("display","none")
 
 
-    }
+    };
 
 
 
