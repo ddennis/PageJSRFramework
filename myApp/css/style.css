@@ -4,6 +4,16 @@
 
 
 	.content-base {
+        position: absolute;
         opacity: 0;
         display: none;
 	}
+
+
+    .content-bg{
+        width: 600px;
+        height: 400px;
+        background-color: #e5eff4;
+
+
+    }

@@ -7,6 +7,8 @@
         <link rel="stylesheet" type="text/css" href="css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
 
+        <script src="lib/swfaddress.js"></script>
+
         <meta name="description" content="" />
     </head>
     <body>
@@ -15,39 +17,39 @@
         <header class="top-menu" id="myheader" style="opacity:1">
 
             <ul> 
-                <li><a href="#">item </a></li>
-                <li><a href="#">item </a></li>
-                <li><a href="#">item </a></li>
-                <li><a href="#">item </a></li>
-
+                <li><a href="#" onclick="return false" >History</a></li>
+                <li><a href="#" onclick="return false" >History</a></li>
+                <li><a href="#" onclick="return false">item </a></li>
+                <li><a href="#" onclick="return false">item </a></li>
             </ul>
+
+
         </header>
 
-        <div id="content">
+        <div id="content" class="content-bg">
 
 
-            <div id="home" class="content-base">
+            <div id="home" class="content-base" data-hashtitle="myHome" >
                 <h1>HOME</h1>
                 <p>YES YESlorem ipsum.............</p>
             </div>
-            <div id="folio" class="content-base">
+
+
+            <div id="folio" class="content-base" data-hashtitle="portfolio" >
                 <h1>FOLIO</h1>
                 <p>lorem ipsum.............</p>
             </div>
-            <div id="about" class="content-base">
+            <div id="about" class="content-base" data-hashtitle="About">
                 <h1>ABOUT</h1>
                 <p>lorem ipsum.............</p>
             </div>
-            <div id="contact" class="content-base">
+            <div id="contact" class="content-base" data-hashtitle="Contact">
                 <h1>CONTACT</h1>
                 <p>lorem ipsum.............</p>
             </div>
 
 
         </div>
-
-
-
 
     	<script src="lib/modernizr.js"></script>
         <script src="lib/modernizr.loader.js"></script>

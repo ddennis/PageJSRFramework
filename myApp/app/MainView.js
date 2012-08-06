@@ -11,6 +11,9 @@ define( ['controller/MenuNavigator','controller/ViewNavigator', 'model/AppModel'
         ){
 
 
+
+    var _viewNav
+
   function startApp(){
 
       // Find menu-items
@@ -24,31 +27,42 @@ define( ['controller/MenuNavigator','controller/ViewNavigator', 'model/AppModel'
           var viewNav = new ViewNavigator ()
           viewNav.setModel(navigationModel)
 
+
+      _viewNav = viewNav
+
 //---------------------------------------------------------------------------------------
 
       var home = $("#home")
       viewNav.addView(home, new FrontPage())
 
-
       var folio = $('#folio')
       viewNav.addView(folio, new Portfolio())
 
-
-/*
-        var about = $('#about')
+      var about = $('#about')
       viewNav.addView(about)
 
-        var contact = $('#contact')
+      var contact = $('#contact')
       viewNav.addView(contact)
-*/
-        // start it
-        navigationModel.update ()
+
+      // start it
+      navigationModel.update (0)
+
+      SWFAddress.addEventListener(SWFAddressEvent.CHANGE, handleChange);
+
 
     }
 
+        function handleChange(e) {
+
+            console.log ("HANDLE " )
+            console.log ("e "+ e.path )
+            console.log ("------------------------ " )
+        }
 
 
-    return {
+
+
+        return {
         startApp:startApp
 
     };

@@ -71,6 +71,7 @@ define(function () {
                 model.setCurrentIndex(index)
 
 
+                SWFAddress.setValue(index.toString())
                 // testIt ()
 
                 //setCurrentByIndex(index)
