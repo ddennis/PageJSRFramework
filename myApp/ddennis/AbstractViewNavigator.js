@@ -101,7 +101,6 @@ define(['ddennis/AbstractPage'], function (AbstractPage) {
 
     AbstractViewNavigator.prototype.urlChange = function (url) {
 
-
         var myurl = toTitleCase(url)
 
         var indexNum = undefined
@@ -115,14 +114,16 @@ define(['ddennis/AbstractPage'], function (AbstractPage) {
         }
 
         if(indexNum == undefined ){
-            _model.setCurrentIndex(_model.currentIndex)
+
+            //_model.setCurrentIndex(_model.currentIndex)
+            _model.forceUpdate()
 
         }else{
-            _model.setCurrentIndex(indexNum)
+            _model.forceUpdate(indexNum)
 
         }
 
-            console.log ("indexNum = " +indexNum )
+
     }
 
 

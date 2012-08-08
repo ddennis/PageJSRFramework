@@ -32,6 +32,8 @@ define(function () {
             // Save index
             item.data('index', i);
 
+
+
             // put in array
             itemArr[i] = item
 
@@ -68,10 +70,11 @@ define(function () {
                 // Content index
                 //Config_main.contentIndex = $(this).data('index');
                 var index = $(this).data('index');
+                console.log (" MENU ITEM index " +index)
                 model.setCurrentIndex(index)
 
 
-                //SWFAddress.setValue(index.toString())
+               // SWFAddress.setValue(index.toString())
                 // testIt ()
 
                 //setCurrentByIndex(index)

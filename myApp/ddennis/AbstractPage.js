@@ -22,7 +22,7 @@ define(function(){
   		AbstractPage.prototype.activate = function() {
 
   			  //return "AbstractPage activate"
-              console.log ("AbstractPage name = "+this._name  )
+              //console.log ("AbstractPage name = "+this._name  )
              // console.log ("AbstractPage name = "+ this._domObj.html()  )
 
              this._domObj.css("display","block")
@@ -34,8 +34,8 @@ define(function(){
     AbstractPage.prototype.cleanUp = function () {
         this._domObj.css("display","none")
         this._domObj.css("opacity","0")
-        console.log ("AbstractPage name = "+this._name  )
-        console.log ("_dom " + this._domObj)
+
+
         //console.log ("AbstractPage cleanUp " )
     };
 

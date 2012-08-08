@@ -20,7 +20,7 @@ define( ['controller/MenuNavigator','controller/ViewNavigator', 'model/AppModel'
           var container = $('#myheader');
           var items = container.find('li');
 
-         var navigationModel = new Model ()
+         var navigationModel = new Model ('navigationModel', 4)
          menuNavigator.init(items, navigationModel)
          //viewNavigator.setModel(navigationModel)
 
@@ -51,28 +51,29 @@ define( ['controller/MenuNavigator','controller/ViewNavigator', 'model/AppModel'
           //navigationModel.update (0)
 
 
+
+            var btn = $('#myBtn')
+            btn.on('click', function () {
+
+                navigationModel.setCurrentIndex(navigationModel.currentIndex + 1)
+
+            });
+
+             $('#myBackBtn').on('click', function () {
+
+                  navigationModel.setCurrentIndex(navigationModel.currentIndex - 1)
+             });
+
+
           SWFAddress.addEventListener(SWFAddressEvent.CHANGE, handleChange);
-
-
          _viewNav.urlChange(SWFAddress.getValue()  )
-
-
 
     }
 
 
 
-
         function handleChange(e) {
-
-            //console.log ("HANDLE " )
-            console.log ("e "+ e.path )
-            console.log ("------------------------ " )
-
-             _viewNav.urlChange(e.path)
-
-
-
+            _viewNav.urlChange(e.path)
         }
 
 
@@ -82,4 +83,5 @@ define( ['controller/MenuNavigator','controller/ViewNavigator', 'model/AppModel'
 
     };
 });
+
 
